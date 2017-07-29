@@ -1,0 +1,205 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Colobot SatCom",
+    "patterns": [{
+            "include": "#escaped-char"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#line-background"
+        },
+        {
+            "include": "#background"
+        },
+        {
+            "include": "#monospaced"
+        },
+        {
+            "include": "#link"
+        },
+        {
+            "include": "#keyboard-key"
+        },
+        {
+            "include": "#button"
+        },
+        {
+            "include": "#image"
+        }
+    ],
+    "repository": {
+        "escaped-char": {
+            "patterns": [{
+                "name": "variable.language.escape.cbotscene, constant.character.escape.cbotsatcom",
+                "match": "\\\\\\\\"
+            }]
+        },
+        "header": {
+            "name": "markup.heading.markdown.cbotsatcom",
+            "begin": "^\\\\(b|t);",
+            "end": "$",
+            "patterns": [{
+                    "include": "#background"
+                },
+                {
+                    "include": "#link"
+                },
+                {
+                    "include": "#keyboard-key"
+                },
+                {
+                    "include": "#monospaced"
+                },
+                {
+                    "include": "#escaped-char"
+                },
+                {
+                    "include": "#button"
+                }
+            ]
+        },
+        "line-background": {
+            "begin": "^\\\\(s|tab);",
+            "end": "(.+)$",
+            "name": "string.background.cbotsatcom",
+            "patterns": [],
+            "endCaptures": {
+                "1": {
+                    "patterns": [{
+                            "include": "#background"
+                        },
+                        {
+                            "include": "#link"
+                        },
+                        {
+                            "include": "#keyboard-key"
+                        },
+                        {
+                            "include": "#monospaced"
+                        },
+                        {
+                            "include": "#escaped-char"
+                        }
+                    ]
+                }
+            }
+        },
+        "background": {
+            "match": "\\\\(?:token|type|const|key);(.+?)\\\\norm;",
+            "name": "keyword.other.cbotsatcom",
+            "patterns": [],
+            "captures": {
+                "1": {
+                    "patterns": [{
+                            "include": "#background"
+                        },
+                        {
+                            "include": "#keyboard-key"
+                        },
+                        {
+                            "include": "#monospaced"
+                        },
+                        {
+                            "include": "#escaped-char"
+                        }
+                    ]
+                }
+            }
+        },
+        "monospaced": {
+            "match": "\\\\c;(.+?)\\\\n;",
+            "name": "entity.name.function.monospaced.cbotsatcom",
+            "patterns": [],
+            "captures": {
+                "1": {
+                    "patterns": [{
+                            "include": "#background"
+                        },
+                        {
+                            "include": "#link"
+                        },
+                        {
+                            "include": "#keyboard-key"
+                        },
+                        {
+                            "include": "#escaped-char"
+                        },
+                        {
+                            "include": "#line-background"
+                        }
+                    ]
+                }
+            }
+        },
+        "link": {
+            "patterns": [{
+                "name": "entity.name.tag.link.cbotsatcom, markup.underline.link.cbotsatcom",
+                "match": "\\\\l;(.+?)\\\\u (.+?);",
+                "captures": {
+                    "1": {
+                        "name": "string.other.link.description.cbotsatcom",
+                        "patterns": [{
+                                "include": "#background"
+                            },
+                            {
+                                "include": "#keyboard-key"
+                            },
+                            {
+                                "include": "#escaped-char"
+                            },
+                            {
+                                "include": "#line-background"
+                            }
+                        ]
+                    },
+                    "2": {
+                        "name": "variable.parameter.link.cbotsatcom"
+                    }
+                }
+            }]
+        },
+        "keyboard-key": {
+            "patterns": [{
+                "name": "constant.other.keyboardkey.cbotsatcom",
+                "match": "\\\\key (?xi)\\b(?:\n    Left|Right|Up|Down|\n    Gup|Gdown|\n    Camera|Desel|Action|Near|Away|Next|Human|Quit|Help|Prog|Cbot|Visit|\n    speed10|speed15|speed20\n)\n"
+            }]
+        },
+        "button": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.button.cbotsatcom",
+                    "match": "\\\\button (\\d+);",
+                    "captures": {
+                        "1": {
+                            "name": "constant.numeric.cbotsatcom"
+                        }
+                    }
+                }
+            ]
+        },
+        "image": {
+            "patterns": [
+                {
+                    "name": "entity.name.tag.image.cbotsatcom, markup.underline.link.image.cbotsatcom",
+                    "match": "\\\\image ([^\\s]+) (\\d+ \\d+);",
+                    "captures": {
+                        "1": {
+                            "name": "string.other.link.description.image.cbotsatcom",
+                            "patterns": [
+                                {
+                                    "include": "#escaped-char"
+                                }
+                            ]
+                        },
+                        "2": {
+                            "name": "constant.numeric.image.cbotsatcom"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "scopeName": "text.html.cbotsatcom"
+}

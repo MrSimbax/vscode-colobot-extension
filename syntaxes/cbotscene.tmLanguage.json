@@ -1,0 +1,79 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Colobot Scene",
+    "patterns": [{
+            "include": "#command"
+        },
+        {
+            "include": "#parameter"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#inline-comment"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "command": {
+            "patterns": [{
+                "name": "entity.name.function.command.cbotscene",
+                "match": "^((?:Title|Resume)(?:\\.[A-Z])?|Instructions|Satellite|Loading|(Soluce|Help|Ending)File|(Script|Frontsize|Foreground)Name|Background|Terrain((Random)?Relief|Resource|Water|InitTextures|Generate|Init|Level|Create|Wind|Blitz|Lava|Cloud|Material)|(Create|Begin)Object|MessageDelay|(Cache)?Audio|AudioChange|(Ambient|Fog|Vehicle|Greenery|Insect|Water|Map)Color|DeepView|FogStart|CreateFog|SecondTexture|Planet|GroundSpot|MaxFlyingHeight|NewScript|Enable(Build|Research)|DoneResearch|EndMission(Take|Delay|Research)|Camera|CreateLight|CreateSpot|MapZoom|Mission(Timer|Controller)|TeamName|Level(Controller)?|(Obligatory|Prohibited)Token|\\#Include)\\b"
+            }]
+        },
+        "parameter": {
+            "patterns": [{
+                "name": "variable.parameter.cbotscene",
+                "match": "\\b(name|text|resume|image|d[xy]|table|pos|dir|type|power|factor|track|air|water|color|up|down|cloud(Up|Down)|rank|mode|dim|speed|uv[12]|vision|depth|hard|sleep|delay|magnetic|level|move[XY]|brightness|id|[uvzh]|left|right|min|max|slope|freq|radius|height|run|select|range|shield|magnifyDamage|proxy(Activate|Distance)|selectable|cmdline|auto(Value[0-5]|Type|String)|floor|dist|lost|eye|lookat|win|reset|trainer|script(Runnable|ReadOnly)?\\d+|option|smooth|enabled|program|team|filename|repeat|satcom|satcomRepeat|editor|editorRepeat|full|unitScale|traceQuality|shortcut|mosaic|brick|size|border|diffuse|ambient|glint|gadget|toy(Icon)?|camera(Dist|Lock)?|pyro|ignoreBuildCheck|clip|checkToken|zoom|param|offset|angle|debug|show|(ext|int)Radius|fadeIn|fixDirection|immediat|winTeam|tool|drive|file)\\b"
+            }]
+        },
+        "constant": {
+            "patterns": [{
+                "name": "constant.language.cbotscene",
+                "match": "\\b(Me|SpaceShip|(Practice|Target)Bot|(Wheeled|Tracked|Winged|Legged)(Grabber|(Orga)?Shooter|Sniffer)|Thumper|PhazerShooter|Recycler|Shielder|Subber|Derrick|BotFactory|PowerStation|Converter|RepairCenter|DefenseTower|AlienNest|ResearchCenter|RadarStation|ExchangePost|PowerPlant|AutoLab|NuclearPlant|PowerCaptor|Vault|Destroyer|(Start|Goal)Area|Target[12]|Houston|(Titanium|Uranium)Ore|Titanium|PowerCell|NuclearCell|OrgaMatter|BlackBox|Key[A-D]|TNT|Greenery[1]?[0-9]|Tree[0-3]|Mushroom[12]|MegaStalk[0-5]|Quarts[0-3]|Barrier[01]|Apollo(LEM|Jeep|Module|Antenna|Flag)|WreckBot[wtr][12]|Ruin(BotFactory|Door|Support|Radar|Convert|BaseCamp|HeadCamp)|Alien(Queen|Egg|Ant|Spider|Wasp|Worm)|(Power|Titanium|Uranium|Key[A-D])Spot|WayPoint|(Blue|Red|Green|Yellow|Violet)?Flag|Mine|Portico|Bag|Home|Tech|Firework|Terrain|Object|Quartz[0-4]?|Teen(?:4[01234]|[1-3]?[0-9])|TRACKER|WINGER|THUMPER|SHOOTER|TOWER|PHAZER|SHIELDER|ATOMIC|iPAW|iGUN|RECYCLER|SUBBER|SNIFFER|All|FlatGround|Any|NORMAL|RETRO|CODE_BATTLE|true|false|Grabber|Sniffer|Shooter|OrgaShooter|Other|Wheeled|Tracked|Winged|Legged|BigTracked|NULL|TT|TO|CT|CO|Metal|WIN|LOST|FRAG[tow]|EXPLO[tow]|SHOT[thmw]|EGG|BURN[to]|SPIDER|FALL|RESET|BACK|PLANE|ONBOARD|FIX)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.cbotscene",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                    "name": "variable.language.escape.cbotscene, constant.character.escape.cbotscene",
+                    "match": "\\\\"
+                },
+                {
+                    "name": "variable.language.placeholder.cbotscene, constant.other.placeholder.cbotscene",
+                    "match": "\\%(user|lvl|lng|chap|cat)\\%"
+                }
+            ]
+        },
+        "inline-comment": {
+            "name": "comment.line.cbotscene",
+            "begin": "//",
+            "end": "$",
+            "patterns": []
+        },
+        "number": {
+            "patterns": [{
+                "name": "constant.numeric.cbotscene",
+                "match": "\\s*(?:[-+]?[0-9]*\\.?[0-9]+)\\b"
+            }]
+        },
+        "operator": {
+            "patterns": [{
+                "name": "keyword.operator.cbotscene",
+                "match": "[=;]"
+            }]
+        }
+    },
+    "scopeName": "source.cbotscene"
+}

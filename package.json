@@ -1,0 +1,76 @@
+{
+    "name": "colobot-extension",
+    "displayName": "Colobot Extension",
+    "description": "Support for Colobot-related files.",
+    "version": "0.0.1",
+    "publisher": "Simbax",
+    "engines": {
+        "vscode": "^1.14.0"
+    },
+    "license": "SEE LICENSE IN LICENSE.md",
+    "icon": "./icon.png",
+    "galleryBanner": {
+        "color": "#23C3FF",
+        "theme": "light"
+    },
+    "homepage": "https://github.com/MrSimbax/vscode-colobot-extension/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/MrSimbax/vscode-colobot-extension/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MrSimbax/vscode-colobot-extension.git"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+                "id": "cbot",
+                "aliases": ["CBOT", "cbot"],
+                "extensions": [".cbot"],
+                "configuration": "./cbot-configuration.json",
+                "firstLine": "^extern void object::.+(.*).*$"
+            },
+            {
+                "id": "cbotsatcom",
+                "aliases": ["Colobot SatCom", "cbotsatcom"],
+                "extensions": [".satcom"],
+                "firstLine": "^\\\\b;.+$"
+            },
+            {
+                "id": "cbotscene",
+                "aliases": ["Colobot Scene", "cbotscene"],
+                "extensions": [".scene"],
+                "configuration": "./cbotscene-configuration.json",
+                "firstLine": "^Title.* text=\".+\".*$"
+            }
+        ],
+        "grammars": [{
+                "language": "cbot",
+                "scopeName": "source.cbot",
+                "path": "./syntaxes/cbot.tmLanguage.json"
+            },
+            {
+                "language": "cbotsatcom",
+                "scopeName": "text.html.cbotsatcom",
+                "path": "./syntaxes/cbotsatcom.tmLanguage.json"
+            },
+            {
+                "language": "cbotscene",
+                "scopeName": "source.cbotscene",
+                "path": "./syntaxes/cbotscene.tmLanguage.json"
+            }
+        ],
+        "configurationDefaults": {
+            "[cbot]": {
+                "editor.insertSpaces": false,
+                "editor.tabSize": 4
+            },
+            "[cbotsatcom]": {
+                "editor.insertSpaces": false,
+                "editor.tabSize": 4
+            }
+        }
+    }
+}
