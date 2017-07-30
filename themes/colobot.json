@@ -1,0 +1,176 @@
+{
+    "$schema": "vscode://schemas/color-theme",
+    "name": "Colobot Colors",
+    "include": "./unchanged_from_light_vs_plus.json",
+    "colors": {
+        "editor.background": "#D9D9D9",
+        "editorLineNumber.foreground": "#000000",
+        "editor.foreground": "#000000",
+        "editor.selectionBackground": "#FF9E13",
+        "editor.selectionHighlightBackground": "#FF9E134D",
+        "editor.inactiveSelectionBackground": "#FF9E13AF",
+        "editorCursor.foreground": "#FF0000",
+        "editorIndentGuide.background": "#FF0000",
+        "editor.lineHighlightBorder": "#D0D0D0"
+    },
+    "tokenColors": [
+        {
+            "scope": "comment",
+            "settings": {
+                "foreground": "#40454E"
+            }
+        },
+        {
+            "scope": "constant.language",
+            "settings": {
+                "foreground": "#E12D2D"
+            }
+        },
+        {
+            "scope": [
+                "constant.numeric"
+            ],
+            "settings": {
+                "foreground": "#3D6257"
+            }
+        },
+        {
+            "scope": "markup.heading",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#8C8360"
+            }
+        },
+        {
+            "scope": [
+                "beginning.punctuation.definition.list.cbotsatcom"
+            ],
+            "settings": {
+                "foreground": "#0451a5"
+            }
+        },
+        {
+            "scope": "storage",
+            "settings": {
+                "foreground": "#4F7132"
+            }
+        },
+        {
+            "scope": "storage.type",
+            "settings": {
+                "foreground": "#4F7132"
+            }
+        },
+        {
+            "scope": "storage.modifier",
+            "settings": {
+                "foreground": "#4F7132"
+            }
+        },
+        {
+            "scope": "string",
+            "settings": {
+                "foreground": "#3D6257"
+            }
+        },
+        {
+            "scope": "keyword",
+            "settings": {
+                "foreground": "#3D6E96"
+            }
+        },
+        {
+            "scope": "keyword.control",
+            "settings": {
+                "foreground": "#3D6E96"
+            }
+        },
+        {
+            "scope": "keyword.operator",
+            "settings": {
+                "foreground": "#000000"
+            }
+        },
+        {
+            "name": "this.self",
+            "scope": "variable.language",
+            "settings": {
+                "foreground": "#8B549B"
+            }
+        },
+        {
+            "name": "Function declarations",
+            "scope": [
+                "entity.name.function",
+                "support.function",
+                "support.constant.handlebars"
+            ],
+            "settings": {
+                "foreground": "#7D612A"
+            }
+        },
+        {
+            "name": "SatCom: line background",
+            "scope": "string.linebg.cbotsatcom",
+            "settings": {
+                "foreground": "#9b7a03",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "SatCom: key background",
+            "scope": "keyword.other.key.cbotsatcom",
+            "settings": {
+                "foreground": "#8C8C8C"
+            }
+        },
+        {
+            "name": "SatCom: key name background",
+            "scope": "constant.other.keyboardkey.cbotsatcom",
+            "settings": {
+                "foreground": "#6C6C6C"
+            }
+        },
+        {
+            "name": "SatCom: monospaced",
+            "scope": "markup.inline.raw.monospaced.cbotsatcom",
+            "settings": {
+                "foreground": "#3F3F3F",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "SatCom: link underline",
+            "scope": [
+                "markup.underline.link.cbotsatcom",
+                "entity.name.tag.link.cbotsatcom",
+                "markup.underline.link.image.cbotsatcom",
+                "entity.name.tag.image.cbotsatcom"
+                
+            ],
+            "settings": {
+                "foreground": "#6D6DEC"
+            }
+        },
+        {
+            "name": "SatCom: link description",
+            "scope": [
+                "string.other.link.description.cbotsatcom",
+                "string.other.link.description.image.cbotsatcom"
+            ],
+            "settings": {
+                "foreground": "#000000"
+            }
+        },
+        {
+            "name": "SatCom: link parameter",
+            "scope": [
+                "variable.parameter.link.cbotsatcom",
+                "constant.numeric.image.cbotsatcom"
+            ],
+            "settings": {
+                "foreground": "#6161ea"
+            }
+        }
+    ]
+}

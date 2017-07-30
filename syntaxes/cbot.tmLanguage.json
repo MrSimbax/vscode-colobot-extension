@@ -1,101 +1,101 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "CBOT",
-	"patterns": [{
-			"include": "#instruction"
-		},
-		{
-			"include": "#function"
-		},
-		{
-			"include": "#this"
-		},
-		{
-			"include": "#type"
-		},
-		{
-			"include": "#constant"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#inline-comment"
-		},
-		{
-			"include": "#block-comment"
-		},
-		{
-			"include": "#number"
-		},
-		{
-			"include": "#operator"
-		}
-	],
-	"repository": {
-		"instruction": {
-			"patterns": [{
-				"name": "keyword.control.cbot",
-				"match": "(?x)\\b(\n    if|else|for|while|do|break|continue|return|\n    extern|class|static|public|private|synchronized|new|\n    switch|case|default\n)\\b"
-			}]
-		},
-		"function": {
-			"patterns": [{
-				"name": "entity.name.function.cbot",
-				"match": "(?x)\\b(\n    sin|cos|tan|asin|acos|atan|atan2|\n    sqrt|pow|rand|abs|floor|ceil|round|trunc|\n    sizeof|retobject|errmode|busy|takeoff|research|factory|destroy|search|radar|\n    direction|distance|distance2d|space|flatspace|flatground|\n    canbuild|canresearch|researched|buildingenabled|build|\n    wait|move|turn|goto|grab|drop|\n    sniff|receive|send|deleteinfo|testinfo|\n    thump|recycle|shield|fire|antfire|aim|motor|jet|\n    topo|message|abstime|\n    strlen|strleft|strright|strmid|strval|strfind|strlower|strupper|\n    open|close|writeln|readln|eof|deletefile|openfile|\n    pendown|penup|pencolor|penwidth|\n    retobjectbyid|ismovie|ipf|camerafocus\n    )\\b"
-			}]
-		},
-		"this": {
-			"patterns": [{
-				"name": "variable.language.cbot",
-				"match": "\\b(this|super)\\b"
-			}]
-		},
-		"type": {
-			"patterns": [{
-				"name": "storage.type.cbot",
-				"match": "\\b(void|int|float|bool(ean)?|string|point|object|file)\\b"
-			}]
-		},
-		"constant": {
-			"patterns": [{
-				"name": "constant.language.cbot",
-				"match": "(?x)\\b(\n    (?# Language keywords)\n    true|false|null|nan|\n    (?# Buildings)\n    Portico|SpaceShip|\n    Derrick|Converter|\n    (?# Buildable by player)\n        Build(\n        Derrick|Converter|\n        (Nuclear|Power)Plant|\n        BotFactory|PowerStation|RepairCenter|\n        ResearchCenter|AutoLab|\n        Destroyer|DefenseTower|PowerCaptor|\n        RadarStation|ExchangePost\n        )|\n    Vault|Houston|Target(1|2)|(Start|Goal)Area|Barrier|\n    AlienNest|\n    (?# Resources)\n    Titanium(Ore)?|UraniumOre|\n    (Power|Nuclear)Cell|\n    (?# Gameplay objects)\n    OrgaMatter|BlackBox|Key(A|B|C|D)|TNT|Scrap|Mine|\n    (Blue|Red|Green|Yellow|Violet)Flag|\n    (Power|Titanium|Uranium|Key(A|B|C|D))Spot|\n    WayPoint|\n    (?# Robots)\n    PracticeBot|TargetBot|Scribbler|\n    (Wheeled|Tracked|Winged|Legged)(Grabber|Shooter|OrgaShooter|Sniffer)|\n    PhazerShooter|Thumper|Recycler|Shielder|Subber|\n    (?# Aliens)\n    Me|\n    Alien(Queen|Egg|Ant|Spider|Wasp|Worm)|\n    (?# Other object-related)\n    Wreck|FuelCell(Plant)?|Platinum(Ore|Spot)|\n    (?# Grab/drop positions)\n    InFront|Behind|EnergyCell|\n    (?# Message types)\n    Display(Error|Warning|Info|Message)|\n    (?# Radar filters)\n    Filter(None|OnlyLanding|OnlyFlying|Friendly|Enemy|Neutral)|Any|\n    (?# Damage types)\n    Explosion(None|Bang|Burn|Water)|\n    (?# Statuses)\n    Result(NotEnded|Lost|LostQuick|Win)|\n    (?# Other)\n    FlatGround|UseFlags|\n    (?# Research types)\n    Research(\n        Tracked|Winged|Legged|\n        (Orga|Phazer)Shooter|\n        Thumper|Shielder|Recycler|Subber|Sniffer|\n        DefenseTower|NuclearPlant|\n    )|\n    (?# Easter eggs)\n    PolskiPortalColobota\n)\\b\n"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.cbot",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [{
-				"name": "variable.language.escape.cbot, constant.character.escape.cbot",
-				"match": "\\\\."
-			}]
-		},
-		"inline-comment": {
-			"name": "comment.line.cbot",
-			"begin": "//",
-			"end": "$",
-			"patterns": []
-		},
-		"block-comment": {
-			"name": "comment.block.cbot",
-			"begin": "/\\*",
-			"end": "\\*/",
-			"patterns": []
-		},
-		"number": {
-			"patterns": [{
-				"name": "constant.numeric.cbot",
-				"match": "\\b(0x[0-9A-Fa-f]*|[0-9]+\\.?[0-9]*)"
-			}]
-		},
-		"operator": {
-			"patterns": [{
-				"name": "keyword.operator.cbot",
-				"match": "(?:\\?|:|==|!=|<=|>=|<>|<|>|=|\\-\\-|\\+\\+|\\-|\\+|\\*|\\/|%|!|&&|\\|\\||(?<=[A-Za-z_0-9])\\.(?=[A-Za-z_])|;|,|\\b(or|and|not)\\b|\\||&|\\^|>>|<<)"
-			}]
-		}
-	},
-	"scopeName": "source.cbot"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "CBOT",
+    "patterns": [{
+            "include": "#instruction"
+        },
+        {
+            "include": "#function"
+        },
+        {
+            "include": "#this"
+        },
+        {
+            "include": "#type"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#inline-comment"
+        },
+        {
+            "include": "#block-comment"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "instruction": {
+            "patterns": [{
+                "name": "keyword.control.cbot",
+                "match": "(?x)\\b(\n    if|else|for|while|do|break|continue|return|\n    extern|class|static|public|private|synchronized|new|\n    switch|case|default\n)\\b"
+            }]
+        },
+        "function": {
+            "patterns": [{
+                "name": "entity.name.function.cbot",
+                "match": "(?x)\\b(\n    sin|cos|tan|asin|acos|atan|atan2|\n    sqrt|pow|rand|abs|floor|ceil|round|trunc|\n    sizeof|retobject|errmode|busy|takeoff|research|factory|destroy|search|radar|\n    direction|distance|distance2d|space|flatspace|flatground|\n    canbuild|canresearch|researched|buildingenabled|build|\n    wait|move|turn|goto|grab|drop|\n    sniff|receive|send|deleteinfo|testinfo|\n    thump|recycle|shield|fire|antfire|aim|motor|jet|\n    topo|message|abstime|\n    strlen|strleft|strright|strmid|strval|strfind|strlower|strupper|\n    open|close|writeln|readln|eof|deletefile|openfile|\n    pendown|penup|pencolor|penwidth|\n    retobjectbyid|ismovie|ipf|camerafocus\n    )\\b"
+            }]
+        },
+        "this": {
+            "patterns": [{
+                "name": "variable.language.cbot",
+                "match": "\\b(this|super)\\b"
+            }]
+        },
+        "type": {
+            "patterns": [{
+                "name": "storage.type.cbot",
+                "match": "\\b(void|int|float|bool(ean)?|string|point|object|file)\\b"
+            }]
+        },
+        "constant": {
+            "patterns": [{
+                "name": "constant.language.cbot",
+                "match": "(?x)\\b(\n    (?# Language keywords)\n    true|false|null|nan|\n    (?# Buildings)\n    Portico|SpaceShip|\n    Derrick|Converter|\n    (?# Buildable by player)\n        Build(\n        Derrick|Converter|\n        (Nuclear|Power)Plant|\n        BotFactory|PowerStation|RepairCenter|\n        ResearchCenter|AutoLab|\n        Destroyer|DefenseTower|PowerCaptor|\n        RadarStation|ExchangePost\n        )|\n    Vault|Houston|Target(1|2)|(Start|Goal)Area|Barrier|\n    AlienNest|\n    (?# Resources)\n    Titanium(Ore)?|UraniumOre|\n    (Power|Nuclear)Cell|\n    (?# Gameplay objects)\n    OrgaMatter|BlackBox|Key(A|B|C|D)|TNT|Scrap|Mine|\n    (Blue|Red|Green|Yellow|Violet)Flag|\n    (Power|Titanium|Uranium|Key(A|B|C|D))Spot|\n    WayPoint|\n    (?# Robots)\n    PracticeBot|TargetBot|Scribbler|\n    (Wheeled|Tracked|Winged|Legged)(Grabber|Shooter|OrgaShooter|Sniffer)|\n    PhazerShooter|Thumper|Recycler|Shielder|Subber|\n    (?# Aliens)\n    Me|\n    Alien(Queen|Egg|Ant|Spider|Wasp|Worm)|\n    (?# Other object-related)\n    Wreck|FuelCell(Plant)?|Platinum(Ore|Spot)|\n    (?# Grab/drop positions)\n    InFront|Behind|EnergyCell|\n    (?# Message types)\n    Display(Error|Warning|Info|Message)|\n    (?# Radar filters)\n    Filter(None|OnlyLanding|OnlyFlying|Friendly|Enemy|Neutral)|Any|\n    (?# Damage types)\n    Explosion(None|Bang|Burn|Water)|\n    (?# Statuses)\n    Result(NotEnded|Lost|LostQuick|Win)|\n    (?# Other)\n    FlatGround|UseFlags|\n    (?# Research types)\n    Research(\n        Tracked|Winged|Legged|\n        (Orga|Phazer)Shooter|\n        Thumper|Shielder|Recycler|Subber|Sniffer|\n        DefenseTower|NuclearPlant|\n    )|\n    (?# Easter eggs)\n    PolskiPortalColobota\n)\\b\n"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.cbot",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "variable.language.escape.cbot, constant.character.escape.cbot",
+                "match": "\\\\."
+            }]
+        },
+        "inline-comment": {
+            "name": "comment.line.cbot",
+            "begin": "//",
+            "end": "$",
+            "patterns": []
+        },
+        "block-comment": {
+            "name": "comment.block.cbot",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": []
+        },
+        "number": {
+            "patterns": [{
+                "name": "constant.numeric.cbot",
+                "match": "\\b(0x[0-9A-Fa-f]*|[0-9]+\\.?[0-9]*)"
+            }]
+        },
+        "operator": {
+            "patterns": [{
+                "name": "keyword.operator.cbot",
+                "match": "(?:\\?|:|==|!=|<=|>=|<>|<|>|=|\\-\\-|\\+\\+|\\-|\\+|\\*|\\/|%|!|&&|\\|\\||(?<=[A-Za-z_0-9])\\.(?=[A-Za-z_])|;|,|\\b(or|and|not)\\b|\\||&|\\^|>>|<<)"
+            }]
+        }
+    },
+    "scopeName": "source.cbot"
 }

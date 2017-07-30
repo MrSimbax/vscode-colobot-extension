@@ -11,7 +11,7 @@
             "include": "#line-background"
         },
         {
-            "include": "#background"
+            "include": "#fontstyle"
         },
         {
             "include": "#monospaced"
@@ -27,6 +27,9 @@
         },
         {
             "include": "#image"
+        },
+        {
+            "include": "#list"
         }
     ],
     "repository": {
@@ -37,101 +40,184 @@
             }]
         },
         "header": {
-            "name": "markup.heading.markdown.cbotsatcom",
-            "begin": "^\\\\(b|t);",
-            "end": "$",
             "patterns": [{
-                    "include": "#background"
-                },
-                {
-                    "include": "#link"
-                },
-                {
-                    "include": "#keyboard-key"
-                },
-                {
-                    "include": "#monospaced"
-                },
-                {
-                    "include": "#escaped-char"
-                },
-                {
-                    "include": "#button"
+                "name": "markup.heading.cbotsatcom",
+                "match": "^\\\\(?:b|t);(.*)$",
+                "captures": {
+                    "1": {
+                        "patterns": [{
+                                "include": "#fontstyle"
+                            },
+                            {
+                                "include": "#link"
+                            },
+                            {
+                                "include": "#keyboard-key"
+                            },
+                            {
+                                "include": "#monospaced"
+                            },
+                            {
+                                "include": "#escaped-char"
+                            },
+                            {
+                                "include": "#button"
+                            }
+                        ]
+                    }
                 }
-            ]
+            }]
         },
         "line-background": {
-            "begin": "^\\\\(s|tab);",
-            "end": "(.+)$",
-            "name": "string.background.cbotsatcom",
-            "patterns": [],
-            "endCaptures": {
-                "1": {
-                    "patterns": [{
-                            "include": "#background"
-                        },
-                        {
-                            "include": "#link"
-                        },
-                        {
-                            "include": "#keyboard-key"
-                        },
-                        {
-                            "include": "#monospaced"
-                        },
-                        {
-                            "include": "#escaped-char"
-                        }
-                    ]
+            "patterns": [{
+                "name": "string.linebg.cbotsatcom",
+                "match": "^\\\\(?:s|tab);(.*)$",
+                "captures": {
+                    "1": {
+                        "patterns": [{
+                                "include": "#fontstyle"
+                            },
+                            {
+                                "include": "#link"
+                            },
+                            {
+                                "include": "#keyboard-key"
+                            },
+                            {
+                                "include": "#monospaced"
+                            },
+                            {
+                                "include": "#escaped-char"
+                            }
+                        ]
+                    }
                 }
-            }
+            }]
         },
-        "background": {
-            "match": "\\\\(?:token|type|const|key);(.+?)\\\\norm;",
-            "name": "keyword.other.cbotsatcom",
-            "patterns": [],
-            "captures": {
-                "1": {
-                    "patterns": [{
-                            "include": "#background"
-                        },
-                        {
-                            "include": "#keyboard-key"
-                        },
-                        {
-                            "include": "#monospaced"
-                        },
-                        {
-                            "include": "#escaped-char"
-                        }
-                    ]
-                }
+        "fontstyle": {
+            "patterns": [{
+                "name": "keyword.control.cbotsatcom",
+                "begin": "\\\\token;",
+                "end": "\\\\norm;",
+                "patterns": [{
+                        "include": "#fontstyle"
+                    },
+                    {
+                        "include": "#keyboard-key"
+                    },
+                    {
+                        "include": "#monospaced"
+                    },
+                    {
+                        "include": "#escaped-char"
+                    },
+                    {
+                        "include": "#line-background"
+                    },
+                    {
+                        "include": "#list"
+                    }
+                ]
+            },
+            {
+                "name": "storage.type.cbotsatcom",
+                "begin": "\\\\type",
+                "end": "\\\\norm;",
+                "patterns": [{
+                        "include": "#fontstyle"
+                    },
+                    {
+                        "include": "#keyboard-key"
+                    },
+                    {
+                        "include": "#monospaced"
+                    },
+                    {
+                        "include": "#escaped-char"
+                    },
+                    {
+                        "include": "#line-background"
+                    },
+                    {
+                        "include": "#list"
+                    }
+                ]
+            },
+            {
+                "name": "constant.language.cbotsatcom",
+                "begin": "\\\\const;",
+                "end": "\\\\norm;",
+                "patterns": [{
+                        "include": "#fontstyle"
+                    },
+                    {
+                        "include": "#keyboard-key"
+                    },
+                    {
+                        "include": "#monospaced"
+                    },
+                    {
+                        "include": "#escaped-char"
+                    },
+                    {
+                        "include": "#line-background"
+                    },
+                    {
+                        "include": "#list"
+                    }
+                ]
+            },
+            {
+                "name": "keyword.other.key.cbotsatcom",
+                "begin": "\\\\key;",
+                "end": "\\\\norm;",
+                "patterns": [{
+                        "include": "#fontstyle"
+                    },
+                    {
+                        "include": "#keyboard-key"
+                    },
+                    {
+                        "include": "#monospaced"
+                    },
+                    {
+                        "include": "#escaped-char"
+                    },
+                    {
+                        "include": "#line-background"
+                    },
+                    {
+                        "include": "#list"
+                    }
+                ]
             }
+        ]
         },
         "monospaced": {
-            "match": "\\\\c;(.+?)\\\\n;",
-            "name": "entity.name.function.monospaced.cbotsatcom",
-            "patterns": [],
-            "captures": {
-                "1": {
-                    "patterns": [{
-                            "include": "#background"
-                        },
-                        {
-                            "include": "#link"
-                        },
-                        {
-                            "include": "#keyboard-key"
-                        },
-                        {
-                            "include": "#escaped-char"
-                        },
-                        {
-                            "include": "#line-background"
-                        }
-                    ]
-                }
-            }
+            "patterns": [{
+                "name": "markup.inline.raw.monospaced.cbotsatcom",
+                "begin": "\\\\c;",
+                "end": "\\\\n;",
+                "patterns": [{
+                        "include": "#fontstyle"
+                    },
+                    {
+                        "include": "#link"
+                    },
+                    {
+                        "include": "#keyboard-key"
+                    },
+                    {
+                        "include": "#escaped-char"
+                    },
+                    {
+                        "include": "#line-background"
+                    },
+                    {
+                        "include": "#list"
+                    }
+                ]
+            }]
         },
         "link": {
             "patterns": [{
@@ -141,7 +227,7 @@
                     "1": {
                         "name": "string.other.link.description.cbotsatcom",
                         "patterns": [{
-                                "include": "#background"
+                                "include": "#fontstyle"
                             },
                             {
                                 "include": "#keyboard-key"
@@ -163,42 +249,42 @@
         "keyboard-key": {
             "patterns": [{
                 "name": "constant.other.keyboardkey.cbotsatcom",
-                "match": "\\\\key (?xi)\\b(?:\n    Left|Right|Up|Down|\n    Gup|Gdown|\n    Camera|Desel|Action|Near|Away|Next|Human|Quit|Help|Prog|Cbot|Visit|\n    speed10|speed15|speed20\n)\n"
+                "match": "\\\\key (?xi)\\b(?:\n    Left|Right|Up|Down|\n    Gup|Gdown|\n    Camera|Desel|Action|Near|Away|Next|Human|Quit|Help|Prog|Cbot|Visit|\n    speed10|speed15|speed20\n);"
             }]
         },
         "button": {
-            "patterns": [
-                {
-                    "name": "constant.numeric.button.cbotsatcom",
-                    "match": "\\\\button (\\d+);",
-                    "captures": {
-                        "1": {
-                            "name": "constant.numeric.cbotsatcom"
-                        }
+            "patterns": [{
+                "name": "constant.numeric.button.cbotsatcom",
+                "match": "\\\\button (\\d+);",
+                "captures": {
+                    "1": {
+                        "name": "constant.numeric.cbotsatcom"
                     }
                 }
-            ]
+            }]
         },
         "image": {
-            "patterns": [
-                {
-                    "name": "entity.name.tag.image.cbotsatcom, markup.underline.link.image.cbotsatcom",
-                    "match": "\\\\image ([^\\s]+) (\\d+ \\d+);",
-                    "captures": {
-                        "1": {
-                            "name": "string.other.link.description.image.cbotsatcom",
-                            "patterns": [
-                                {
-                                    "include": "#escaped-char"
-                                }
-                            ]
-                        },
-                        "2": {
-                            "name": "constant.numeric.image.cbotsatcom"
-                        }
+            "patterns": [{
+                "name": "entity.name.tag.image.cbotsatcom, markup.underline.link.image.cbotsatcom",
+                "match": "\\\\image ([^\\s]+) (\\d+ \\d+);",
+                "captures": {
+                    "1": {
+                        "name": "string.other.link.description.image.cbotsatcom",
+                        "patterns": [{
+                            "include": "#escaped-char"
+                        }]
+                    },
+                    "2": {
+                        "name": "constant.numeric.image.cbotsatcom"
                     }
                 }
-            ]
+            }]
+        },
+        "list": {
+            "patterns": [{
+                "name": "beginning.punctuation.definition.list.cbotsatcom",
+                "match": "^\\s*o\\s+"
+            }]
         }
     },
     "scopeName": "text.html.cbotsatcom"

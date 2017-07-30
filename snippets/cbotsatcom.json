@@ -1,0 +1,142 @@
+{
+    "b header": {
+        "prefix": "\\b;",
+        "body": [
+            "\\b;${1:Header}$0"
+        ],
+        "description": "Big header \\b;"
+    },
+    "t header": {
+        "prefix": "\\t;",
+        "body": [
+            "\\t;${1:Header}$0"
+        ],
+        "description": "Small header \\t;"
+    },
+    "s inline code background": {
+        "prefix": "\\s;",
+        "body": [
+            "\\s;\\c;${1:code}\\n;$0"
+        ],
+        "description": "Inline code background with monospaced font \\s;\\c;CODE\\n;"
+    },
+    "s only background": {
+        "prefix": "\\s;",
+        "body": [
+            "\\s;${1:text}$0"
+        ],
+        "description": "Code background \\s;"
+    },
+    "s block code background": {
+        "prefix": "\\s;",
+        "body": [
+            "\\c;",
+            "\\s;${1:code}",
+            "\\n;$0"
+        ],
+        "description": "Block code background with monospaced font \\c;\\s;CODE\\n;"
+    },
+    "c monospaced font": {
+        "prefix": "\\c;",
+        "body": [
+            "\\c;${1:code}\\n;$0"
+        ],
+        "description": "Monospaced font \\c;CODE\\n;"
+    },
+    "c inline code background": {
+        "prefix": "\\c;",
+        "body": [
+            "\\s;\\c;${1:code}\\n;$0"
+        ],
+        "description": "Inline code background with monospaced font \\s;\\c;CODE\\n;"
+    },
+    "c block code monospaced font": {
+        "prefix": "\\c;",
+        "body": [
+            "\\c;",
+            "\\s;${1:code}",
+            "\\n;$0"
+        ],
+        "description": "Block code background with monospaced font \\c;\\s;CODE\\n;"
+    },
+    "token background": {
+        "prefix": "\\token;",
+        "body": [
+            "\\token;${1:text}\\norm;$0"
+        ],
+        "description": "Token background \\token;TEXT\\norm;"
+    },
+    "type background": {
+        "prefix": "\\type;",
+        "body": [
+            "\\type;${1:text}\\norm;$0"
+        ],
+        "description": "Type background \\type;TEXT\\norm;"
+    },
+    "const background": {
+        "prefix": "\\const;",
+        "body": [
+            "\\const;${1:text}\\norm;$0"
+        ],
+        "description": "Const background \\const;TEXT\\norm;"
+    },
+    "key background": {
+        "prefix": "\\key;",
+        "body": [
+            "\\key;${1:text}\\norm;$0"
+        ],
+        "description": "Key background \\key;TEXT\\norm;"
+    },
+    "link": {
+        "prefix": "\\l;",
+        "body": [
+            "\\l;${1:text}\\u ${2:file};$0"
+        ],
+        "description": "Hyperlink \\l;TEXT\\u FILE;"
+    },
+    "keyboard key": {
+        "prefix": "\\key",
+        "body": [
+            "\\key ${1:KeyName};$0"
+        ],
+        "description": "Keyboard key \\key KeyName; (e.g. Up)"
+    },
+    "keyboard key with background": {
+        "prefix": "\\key",
+        "body": [
+            "\\key;\\key ${1:KeyName};\\norm;$0"
+        ],
+        "description": "Keyboard key \\key;\\key KeyName;\\norm; (e.g. Up)"
+    },
+    "button icon": {
+        "prefix": "\\button",
+        "body": [
+            "\\button ${1:IconNumber};$0"
+        ],
+        "description": "Icon from button*.png textures \\button IconNumber;"
+    },
+    "image": {
+        "prefix": "\\image",
+        "body": [
+            "\\image ${1:file} ${2:size_x} ${3:size_y};$0"
+        ],
+        "description": "Image from file \\image FILE SIZE_X SIZE_Y;"
+    },
+    "list 2": {
+        "prefix": "list",
+        "body": [
+            "o ${1:first_item}",
+            "o ${2:second_item}$0"
+        ],
+        "description": "List two items"
+    },
+    "list 3": {
+        "prefix": "list",
+        "body": [
+            "o ${1:first_item}",
+            "o ${2:second_item}",
+            "o ${3:third_item}$0"
+        ],
+        "description": "List three items"
+    }
+}

@@ -2,7 +2,7 @@
     "name": "colobot-extension",
     "displayName": "Colobot Extension",
     "description": "Support for Colobot-related files.",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "Simbax",
     "engines": {
         "vscode": "^1.14.0"
@@ -22,7 +22,7 @@
         "url": "https://github.com/MrSimbax/vscode-colobot-extension.git"
     },
     "categories": [
-        "Languages"
+        "Languages", "Snippets", "Themes"
     ],
     "contributes": {
         "languages": [{
@@ -62,6 +62,23 @@
                 "path": "./syntaxes/cbotscene.tmLanguage.json"
             }
         ],
+        "snippets": [{
+                "language": "cbot",
+                "path": "./snippets/cbot.json"
+            },
+            {
+                "language": "cbotsatcom",
+                "path": "./snippets/cbotsatcom.json"
+            }
+        ],
+        "themes": [
+            {
+                "id": "Colobot",
+                "label": "Colobot",
+                "uiTheme": "vs",
+                "path": "./themes/colobot.json"
+            }
+        ],
         "configurationDefaults": {
             "[cbot]": {
                 "editor.insertSpaces": false,
@@ -69,7 +86,8 @@
             },
             "[cbotsatcom]": {
                 "editor.insertSpaces": false,
-                "editor.tabSize": 4
+                "editor.tabSize": 4,
+                "editor.wordWrap": "on"
             }
         }
     }

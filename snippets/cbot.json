@@ -1,0 +1,182 @@
+{
+    "Main Function": {
+        "prefix": "extern",
+        "body": [
+            "extern void object::Program()",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Main Function"
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (int ${1:index} = 0; ${1:index} < ${2:max}; ++${1:index})",
+            "{",
+            "\t${3:body}",
+            "}$0"
+        ],
+        "description": "For Loop over an array"
+    },
+    "For Loop Array": {
+        "prefix": "for",
+        "body": [
+            "for (int ${1:index} = 0; ${1:index} < sizeof(${2:array}); ++${1:index})",
+            "{",
+            "\t${3:array_type} ${4:element} = ${2:array}[${1:index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop over an array"
+    },
+    "Ternary Operator": {
+        "prefix": "if",
+        "body": [
+            "${1:condition} ? ${2:when_true} : ${3:when_false}$0"
+        ],
+        "description": "condition ? when_true : when_false"
+    },
+    "If Else": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition})",
+            "{",
+            "\t${2:if_body}",
+            "}",
+            "else",
+            "{",
+            "\t${3:else_body}",
+            "}$0"
+        ],
+        "description": "If Else"
+    },
+    "If Elseif Else": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition1})",
+            "{",
+            "\t${2:if_body1}",
+            "}",
+            "else if (${3:condition2})",
+            "{",
+            "\t${4:if_body2}",
+            "}",
+            "else",
+            "{",
+            "\t${3:else_body}",
+            "}$0"
+        ],
+        "description": "If Elseif Else"
+    },
+    "If": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition})",
+            "{",
+            "\t${2:if_body}",
+            "}$0"
+        ],
+        "description": "If (cond) {body}"
+    },
+    "While Loop": {
+        "prefix": "while",
+        "body": [
+            "while (${1:condition})",
+            "{",
+            "\t${2:body}",
+            "}$0"
+        ],
+        "description": "While Loop"
+    },
+    "Do While Loop": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "{",
+            "\t${1:body}",
+            "} while (${2:condition});$0"
+        ],
+        "description": "Do While Loop"
+    },
+    "Switch Case": {
+        "prefix": "switch",
+        "body": [
+            "switch (${1:variable})",
+            "{",
+            "\tcase ${2:value}: ${3:body}; break;",
+            "\t// ... more cases",
+            "\tdefault: ${4:default_body};",
+            "}$0"
+        ],
+        "description": "Switch Case"
+    },
+    "Class": {
+        "prefix": "class",
+        "body": [
+            "public class ${1:ClassName}",
+            "{",
+            "\t$0",
+            "",
+            "\tvoid ${1:ClassName}()",
+            "\t{",
+            "\t\t",
+            "\t}",
+            "}"
+        ],
+        "description": "Class"
+    },
+    "Child Class": {
+        "prefix": "class",
+        "body": [
+            "public class ${1:ClassName} extends ${2:ParentClassName}",
+            "{",
+            "\t$0",
+            "",
+            "\tvoid ${1:ClassName}()",
+            "\t{",
+            "\t\tsuper.${2:ParentClassName}();",
+            "\t}",
+            "}"
+        ],
+        "description": "Child Class"
+    },
+    "Log Message": {
+        "prefix": "message",
+        "body": [
+            "message(\"${1:msg}\");$0"
+        ],
+        "description": "Display a Normal Message"
+    },
+    "Log Info": {
+        "prefix": "info",
+        "body": [
+            "message(\"${1:msg}\", DisplayInfo);$0"
+        ],
+        "description": "Display an Information Message"
+    },
+    "Log Warning": {
+        "prefix": "warning",
+        "body": [
+            "message(\"${1:msg}\", DisplayWarning);$0"
+        ],
+        "description": "Display a Warning Message"
+    },
+    "Log Error": {
+        "prefix": "error",
+        "body": [
+            "message(\"${1:msg}\", DisplayError);$0"
+        ],
+        "description": "Display an Error Message"
+    },
+    "Function": {
+        "prefix": "function",
+        "body": [
+            "${2:result_type} ${1:FunctionName}(${3:parameters})",
+            "{",
+            "\t${4:body}",
+            "}$0"
+        ],
+        "description": "Create a function"
+    }
+}
