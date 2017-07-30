@@ -8,7 +8,7 @@
         "vscode": "^1.14.0"
     },
     "license": "SEE LICENSE IN LICENSE.md",
-    "icon": "./icon.png",
+    "icon": "icon.png",
     "galleryBanner": {
         "color": "#23C3FF",
         "theme": "light"
